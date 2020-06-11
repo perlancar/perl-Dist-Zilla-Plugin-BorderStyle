@@ -96,8 +96,8 @@ sub munge_files {
 
         my $file_content = $file->content;
 
-        my $theme = \%{"$pkg\::THEME"}; keys %$theme or do {
-            $self->log_fatal(["No border style structure defined in \$THEME in %s", $file->name]);
+        my $theme = \%{"$pkg\::BORDER"}; keys %$theme or do {
+            $self->log_fatal(["No border style structure defined in \$BORDER in %s", $file->name]);
         };
 
         # set ABSTRACT from border style structure's summary
